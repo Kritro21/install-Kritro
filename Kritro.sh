@@ -7,14 +7,8 @@
 #
 
 function install() {
-    eecho "*****************************************************************"
-	echo " Welcome you use Kritro write a key erection DNF service script"                  
-	echo "          感谢您使用Kritro一键架设DNF商业版!"
-	echo "           Our web site：www.1nvincible.online"
-	echo "              我们的网站：1nvincible.online"
-	echo "         Created by Kritro on 23/8/11.最后一次整理!"
-	echo "******************************************************************"
-    read -p "请输入CentOS版本 例如5.11，输入5回车：" versionNumber
+    echo "腾讯云的朋友，可以一试，确定按照这里的操作无误，还是无法成功，另找他法吧"
+    read -p "输入centOS版本，例如5.11，输入5，然后回车：" versionNumber
 #TODO:直接取系统版本号判断，再检测文件是否存在，不符合都跳出
     read -p "输入服务器环境，2为国外(需要自行更换证书及pvf文件)，3为自带Server.tar.gz及证书及pvf文件(此项开始前要确保根目录下存在Server.tar.gz、publickey.pem、Script.pvf)，优先选3，然后回车：" networkState
     if (($versionNumber==5)); then
@@ -186,10 +180,7 @@ function removeTemp() {
 }
 
 install
-echo "********************************************************"
+echo "***********************"
 echo " IP = ${IP}"
-echo "          感谢您使用Kritro一键架设DNF商业版!"
-echo "           我们的网站：www.1nvincible.online"
-echo "              制作者：Kritro QQ 3332425262"
-echo "         Created by Kritro on 23/8/11.最后一次整理!"
-echo "********************************************************"
+echo "重启的话需要使用命令 service iptables stop 重新关闭防火墙"
+echo "***********************"
