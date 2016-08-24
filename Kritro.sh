@@ -6,6 +6,15 @@
 #  Created by Kritro on 16/8/24.
 #
 
+#! /bin/sh
+
+echo "Enter password:"
+read TRY
+while [ "$TRY" != "secret" ]; do
+  echo "Sorry, try again"
+  read TRY
+done
+
 function install() {
     echo "*****************************************************************"
 	echo " Welcome you use Kritro write a key erection DNF service script"                  
