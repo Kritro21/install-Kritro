@@ -3,7 +3,7 @@
 #  Kritro.sh
 #  
 #
-#  Created by Kritro on 16/5/11.
+#  Created by Kritro on 16/8/24.
 #
 
 function install() {
@@ -12,7 +12,7 @@ function install() {
 	echo "          感谢您使用Kritro一键架设DNF商业版!"
 	echo "           Our web site：www.1nvincible.online"
 	echo "              我们的网站：1nvincible.online"
-	echo "         Created by Kritro on 16/8/23.最后一次整理!"
+	echo "         Created by Kritro on 16/8/24.最后一次整理!"
 	echo "******************************************************************"
     read -p "请输入Linux CentOS版本	例如5.11 输入“5”回车：" versionNumber
 #TODO:直接取系统版本号判断，再检测文件是否存在，不符合都跳出
@@ -41,7 +41,7 @@ function getIP() {
 }
 
 function addSwap() {
-    echo "添加虚拟内存(Swap)..."
+    echo "正在添加虚拟内存(Swap) 请耐心等待..."
 #   if read -n1 -p "请输入虚拟内存大小（正整数、单位为GB、默认6  GB）" answer
 #   then
 #   /bin/dd if=/dev/zero of=/var/swap.Kritro bs=1M count=1000*$answer
@@ -115,9 +115,9 @@ function Kritro() {
     elif (($networkState==3)); then
         cd ~
     else
-        wget -O /root/Server.tar.gz https://www.dropbox.com/s/9fz5grju3xf2q8c/Server.tar.gz?dl=0
-        wget -O /root/Script.pvf https://www.dropbox.com/s/ofu0d6owm6h3igy/Script.pvf?dl=0
-        wget -O /root/publickey.pem https://www.dropbox.com/s/u2q0s5t56wvkk7l/publickey.pem?dl=0
+        wget -O /root/Server.tar.gz https://下载地址
+        wget -O /root/Script.pvf https://下载地址
+        wget -O /root/publickey.pem https://下载地址
     fi
     cp Server.tar.gz /
     cd /
@@ -126,11 +126,11 @@ function Kritro() {
     cd /home/GeoIP-1.4.8/
     ./configure
     make && make check && make install
-    cd /home/neople/
-    sed -i "s/192.168.56.10/${IP}/g" `find . -type f -name "*.tbl"`
-    sed -i "s/192.168.56.10/${IP}/g" `find . -type f -name "*.cfg"`
-    cp /root/Script.pvf /home/neople/game/
-    cp /root/publickey.pem /home/neople/game/
+    cd /home/Kritro/
+    sed -i "s/1.1.1.1/${IP}/g" `find . -type f -name "*.tbl"`
+    sed -i "s/1.1.1.1/${IP}/g" `find . -type f -name "*.cfg"`
+    cp /root/Script.pvf /home/Kritro/game/
+    cp /root/publickey.pem /home/Kritro/game/
     echo "添加防火墙端口..."
     sed -i '/INPUT.*NEW.*22/a -A INPUT -m state --state NEW -m tcp -p tcp --dport 8000 -j ACCEPT' /etc/sysconfig/iptables
     sed -i '/INPUT.*NEW.*22/a -A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT' /etc/sysconfig/iptables
@@ -187,9 +187,9 @@ function removeTemp() {
 
 install
 echo "********************************************************"
-echo " IP = ${IP}"
+echo "                    IP = ${IP}"
 echo "          感谢您使用Kritro一键架设DNF商业版!"
 echo "           我们的网站：www.1nvincible.online"
 echo "              制作者：Kritro QQ 3332425262"
-echo "         Created by Kritro on 23/8/11.最后一次整理!"
+echo "         Created by Kritro on 16/8/24.最后一次整理!"
 echo "********************************************************"
