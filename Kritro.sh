@@ -6,12 +6,10 @@
 #  Created by Kritro on 16/8/24.
 #
 
-#! /bin/sh
-
-echo "Enter password:"
+echo "请输入脚本密码:"
 read TRY
-while [ "$TRY" != "secret" ]; do
-  echo "Sorry, try again"
+while [ "$TRY" != "3332425262ovo" ]; do
+  echo "对不起!密码错误!请重试!"
   read TRY
 done
 
@@ -186,6 +184,7 @@ function removeTemp() {
     rm -f /var.tar.gz
     rm -f /etc.tar.gz
     rm -f /Server.tar.gz
+	rm -f /root/Kritro.sh
     ;;
     n|N|no|No)
     ;;
