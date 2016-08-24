@@ -12,7 +12,7 @@ function install() {
 	echo "          感谢您使用Kritro一键架设DNF商业版!"
 	echo "           Our web site：www.1nvincible.online"
 	echo "              我们的网站：1nvincible.online"
-	echo "         Created by Kritro on 23/8/11.最后一次整理!"
+	echo "         Created by Kritro on 16/8/23.最后一次整理!"
 	echo "******************************************************************"
     read -p "请输入Linux CentOS版本	例如5.11 输入“5”回车：" versionNumber
 #TODO:直接取系统版本号判断，再检测文件是否存在，不符合都跳出
@@ -93,7 +93,7 @@ function installSupportLibOnCentOS6() {
     systemctl enable mariadb.service
 }
 
-function installDOF() {
+function Kritro() {
     getIP
     echo -n "${IP} 是否是你的外网IP?(如果不是你的外网IP或者出现两条IP地址 请输入 n 回车后自行输入!) y/n [n] ?"
     read ans
