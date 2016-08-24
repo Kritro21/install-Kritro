@@ -184,7 +184,8 @@ function removeTemp() {
     rm -f /var.tar.gz
     rm -f /etc.tar.gz
     rm -f /Server.tar.gz
-	rm -f /root/Kritro.sh
+    rm -f /root/Kritro.sh
+    rm -f /Kritro.sh
     ;;
     n|N|no|No)
     ;;
