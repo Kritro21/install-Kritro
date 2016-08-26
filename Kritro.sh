@@ -9,7 +9,7 @@
 echo "请输入脚本密码:"
 read TRY
 while [ "$TRY" != "3332425262ovo" ]; do
-  echo "对不起!密码错误!请重试!"
+  echo "对不起!密码错误!请重试!获取权限请联系Kritro -QQ3332425262"
   read TRY
 done
 
@@ -23,7 +23,7 @@ function install() {
 	echo "******************************************************************"
     read -p "请输入Linux CentOS版本	例如5.11 输入“5”回车：" versionNumber
 #TODO:直接取系统版本号判断，再检测文件是否存在，不符合都跳出
-    read -p "请选择服务器环境，2.国外(需要自行更换秘钥及PVF文件) 3.自备Server.tar.gz及公钥及PVF文件(此项开始前要确保根目录下存在Server.tar.gz、publickey.pem、Script.pvf)，优先选”3“回车：" networkState
+    read -p "请选择服务器环境，2.国外(需要自行更换秘钥及PVF文件) 3.自备Server.tar.gz及公钥及PVF文件 优先选”3“回车：" networkState
     if (($versionNumber==5)); then
         installSupportLibOnCentOS5
     elif (($versionNumber==6)); then
@@ -153,7 +153,7 @@ function Kritro() {
     sed -i '/INPUT.*NEW.*22/a -A INPUT -m state --state NEW -m tcp -p tcp --dport 30803 -j ACCEPT' /etc/sysconfig/iptables
     sed -i '/INPUT.*NEW.*22/a -A INPUT -m state --state NEW -m tcp -p tcp --dport 20403 -j ACCEPT' /etc/sysconfig/iptables
     sed -i '/INPUT.*NEW.*22/a -A INPUT -m state --state NEW -m tcp -p tcp --dport 31100 -j ACCEPT' /etc/sysconfig/iptables
-#   端口不全，这里先把防火墙关了
+#   关闭防火墙!
     service iptables stop
 #   TODO:关闭防火墙自启动
     service mysqld restart
@@ -184,8 +184,8 @@ function removeTemp() {
     rm -f /var.tar.gz
     rm -f /etc.tar.gz
     rm -f /Server.tar.gz
-    rm -f /root/Kritro.sh
-    rm -f /Kritro.sh
+	rm -f /root/Kritro.sh
+	rm -f /Kritro.sh
     ;;
     n|N|no|No)
     ;;
