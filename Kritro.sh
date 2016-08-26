@@ -186,6 +186,7 @@ function removeTemp() {
     rm -f /Server.tar.gz
 	rm -f /root/Kritro.sh
 	rm -f /Kritro.sh
+	rm -f /wget.install
     ;;
     n|N|no|No)
     ;;
