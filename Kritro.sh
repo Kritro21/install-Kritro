@@ -8,7 +8,7 @@
 
 echo "请输入脚本密码:"
 read TRY
-while [ "$TRY" != "3332425262ovo" ]; do
+while [ "$TRY" != "Kritro1nvincible" ]; do
   echo "对不起!密码错误!请重试!获取权限请联系Kritro -QQ3332425262"
   read TRY
 done
